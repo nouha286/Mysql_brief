@@ -1,0 +1,62 @@
+.sidebar
+{
+   
+   
+    background:  #FAFFC1;
+    position: relative;
+}
+.rounded-circle
+{
+    width:70%; 
+}
+.card
+{
+    background: #FAFFC1;
+}
+h4
+{
+    font-style: normal;
+    font-weight: bold;
+}
+
+
+body
+{
+    font-style: normal;
+    width: 100%;
+}
+a
+{
+   text-decoration: none;
+   color: black ;
+}
+.nb
+{
+    
+font-style: normal;
+font-weight: bold;
+font-size: 30px;
+line-height: 37px;
+color: black;
+}
+ p
+{
+ color:  #6C6C6C;
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 25px;
+
+}
+a:hover
+{
+ color: black;
+}
+header
+{
+    display: flex;
+}
+
+
+
+

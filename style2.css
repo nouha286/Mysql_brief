@@ -1,0 +1,18 @@
+body
+{
+    overflow-x: hidden;
+}
+a.list-group-item
+{
+    background: #FAFFC1;
+}
+a.list-group-item:hover
+{
+    background-color:#00C1FE !important;
+    color: black !important;
+    border-radius: 5px !important;
+}
+
+.list-group{
+    min-width: 50px;
+}
