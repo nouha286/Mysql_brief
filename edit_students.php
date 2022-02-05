@@ -1,3 +1,38 @@
+
+<?php 
+        include('i.php');
+   $students_id= $_GET['id'];
+   $sql = "SELECT * FROM students WHERE id='$students_id' ";
+
+   $result = mysqli_query($conn, $sql);
+   $students = mysqli_fetch_assoc($result);
+
+   if(isset($_POST['save']))
+{
+    $Name = $_POST['Name'];
+    $Email= $_POST['Email'];
+    $Phone= $_POST['Phone'];
+    $Enroll_Number= $_POST['Enroll_Number'];
+    $Date_of_admission=$_POST['Date_of_admission'];
+    $sql = "UPDATE students SET SName='$Name', Email='$Email', Phone='$Phone', Enroll_Number='$Enroll_Number', Sdate='$Date_of_admission' WHERE id='$students_id'";
+        if(mysqli_query($conn, $sql))
+        {
+            header('location: ./Students.php');
+        }
+        else{
+            echo "error";
+        }
+        
+}
+    
+    
+
+   
+    
+    mysqli_close($conn);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +48,7 @@
 </head>
 <body>
     <div class="row"  style="height:1050px;">
-    <?php include('i.php') ?>
+ 
             <!--sidebar-->
            <?php  
             $active1="";
@@ -33,10 +68,42 @@
             <?php  include('navbar.php')  ?>
               
                
+                     <form method="POST" >
+
+                                <div class="mb-3">
+                                <label for="N" class="form-label">Name:</label>
+                                <input type="text" class="form-control" name="Name" id="N" value="<?php echo $students['SName']; ?>">
+                                </div>
+
+                                <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Email:</label>
+                                <input type="email" class="form-control" name="Email" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?php echo $students['Email']; ?>">
+
+                                </div>
+
+                                <div class="mb-3">
+                                <label for="P" class="form-label">Phone:</label>
+                                <input type="text" name="Phone" class="form-control" id="P" value="<?php echo $students['Phone']; ?>">
+                                </div>
+
+                                <div class="mb-3">
+                                <label for="E" class="form-label">Entroll_Number:</label>
+                                <input type="text" name="Enroll_Number" class="form-control" id="E" value="<?php echo $students['Enroll_Number']; ?>">
+                                </div>
+
+                                <div class="mb-3">
+                                <label for="D" class="form-label">Date d'admission:</label>
+                                <input type="date" name="Date_of_admission" class="form-control" id="D" value="<?php echo $students['Sdate']; ?>">
+                                </div>
+
+                                <button type="submit" class="btn btn-primary" name="save">Save</button>
+                     </form>
 
 
+<?php 
 
 
+?>
 
 
 

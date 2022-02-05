@@ -79,7 +79,7 @@
                         
                         <div class="mb-3">
                             <label for="E" class="form-label">Entroll_Number:</label>
-                            <input type="text" name="Entroll_Number" class="form-control" id="E">
+                            <input type="text" name="Enroll_Number" class="form-control" id="E">
                         </div>
 
                         <div class="mb-3">
@@ -129,7 +129,7 @@
                                     <td>'.$students['Phone'].'</td>
                                     <td>'.$students['Enroll_Number'].'</td>
                                     <td>'.$students['Sdate'].'</td>
-                                    <td><a  href="./test.php?id='.$students['id'].'"><i class="fas fa-pen text-info"></i></a><span style="color:white;">---</span><a href="remove_students.php?id='.$students['id'].'"><i class="fas fa-trash text-info"></i></a></td>
+                                    <td><a  href="./edit_students.php?id='.$students['id'].'"><i class="fas fa-pen text-info"></i></a><span style="color:white;">---</span><a href="remove_students.php?id='.$students['id'].'"><i class="fas fa-trash text-info"></i></a></td>
                                 </tr>';
                                 
                                  }; 
