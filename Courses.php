@@ -59,7 +59,7 @@
 
                             <div class="mb-3">
                             <label for="N" class="form-label">Course:</label>
-                            <input type="text" class="form-control" name="course" id="N">
+                            <input type="text" class="form-control" name="course" id="N" >
                         </div>
 
                         <div class="mb-3">
@@ -107,9 +107,9 @@
                                  {
                                     echo '<tr>
                                     <td>'.$courses['Course'].'</td>
-                                    <td>'.$courses['Subject'].'</td>
+                                    <td>'.$courses['c_Subject'].'</td>
                                     <td>'.$courses['Author'].'</td>
-                                    <td>'.$courses['Duration of course'].'</td>
+                                    <td>'.$courses['Duration_of_course'].'</td>
                                     <td><a href="./edit_courses.php?id='.$courses['id'].'"><i class="fas fa-pen text-info"></i></a><span style="color:white;">---</span><a href="remove_courses.php?id='.$courses['id'].'"><i class="fas fa-trash text-info"></i></a></td>
                                 </tr>';
                                  }
