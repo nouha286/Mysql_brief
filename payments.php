@@ -120,10 +120,10 @@
                                  {
                                     echo '<tr>
                                     <td>'.$payments['Name'].'</td>
-                                    <td>'.$payments['Payment Schedule'].'</td>
-                                    <td>'.$payments['Bill Number'].'</td>
-                                    <td>'.$payments['Amount Paid'].'</td>
-                                    <td>'.$payments['Balance amount'].'</td>
+                                    <td>'.$payments['Payment_Schedule'].'</td>
+                                    <td>'.$payments['Bill_Number'].'</td>
+                                    <td>'.$payments['Amount_Paid'].'</td>
+                                    <td>'.$payments['Balance_amount'].'</td>
                                     <td>'.$payments['Date'].'</td>
                                     <td></td>
                                 </tr>';
