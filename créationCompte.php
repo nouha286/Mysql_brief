@@ -32,7 +32,7 @@
                     </div>
                     <div class="mb-3 ">
                       <label for="pwd" style="color: gray;">Password:</label>
-                      <input type="password" class="form-control form-control-lg" name="password" id="pwd" placeholder="Enter your password" name="e_password" style="opacity: 0.5;">
+                      <input type="password" class="form-control form-control-lg" name="e_password" id="pwd" placeholder="Enter your password" name="e_password" style="opacity: 0.5;">
                     </div>
                   <input  type="submit" value="SIGN up" name="save" class="btn btn-secondary btn-lg container" style="background-color: #00C1FE; border: none;"> 
             </form>
@@ -44,11 +44,11 @@
 
 
      <?php
-include('i.php');
+    include('i.php');
     if(isset($_POST['save']))
     {
             $userName = $_POST['UserName'];
-            $password= $_POST['password'];
+            $password =strtoupper(hash('sha256', $_POST['e_password']))  ;
             $email= $_POST['email'];
      
      
@@ -56,7 +56,7 @@ include('i.php');
             $sql= " INSERT INTO comptes VALUES( '$email',' $password',NULL,'$userName')";
             if(mysqli_query($conn, $sql))
             {
-                echo "<script>window.location.href = './index.php';</script>";
+                echo "<script>window.location.href = './SignIN.php';</script>";
             }
             else{
                 echo "error";

@@ -1,3 +1,53 @@
+<?php
+
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+
+
+
+  if(isset($_POST["email"]) && isset($_POST["e_password"])){
+
+
+
+    include('i.php');
+
+    $email = $_POST["email"];
+    $password =strtoupper(hash('sha256', $_POST["e_password"]))  ;
+
+     $query = "SELECT * FROM `comptes` WHERE email ='$email'  AND  e_password ='$password' ";
+     $user = mysqli_query($conn,$query);
+
+
+     if( mysqli_num_rows($user) != 0 ){
+         session_start();
+         $rsl = mysqli_fetch_assoc($user);
+
+         $_SESSION['id'] = $rsl['id'];
+         $_SESSION['e_password'] = $rsl['e_password'];
+         $_SESSION['email'] = $rsl['email'];
+         $_SESSION['userName'] = $rsl['userName'];
+
+
+         header('location:  home.php');
+     }
+
+  }
+  else{
+    $erre = '<div class="alert alert-danger" role="alert">
+
+    A simple danger alert—check it out!
+      </div>';
+  }
+
+}
+
+
+
+
+?>
+ 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,47 +91,6 @@
             </div>
           </div>
      </div>
-
-
-     <?php
-
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-
-
-  if(isset($_POST["email"]) && isset($_POST["e_password"])){
-
-
-    include('i.php');
-
-    $email = $_POST["email"];
-    $password = hash('sha256', $_POST["e_password"]) ;
-
-     $query = "SELECT *  FROM comptes WHERE email = '$email'  AND  e_password = '$password' ";
-     $user = mysqli_query($conn,$query);
-
-
-     if( mysqli_num_rows($user) != 0 ){
-         session_start();
-         $rsl = mysqli_fetch_assoc($user);
-         $_SESSION['id'] = $rsl['id'];
-         $_SESSION['e_password'] = $rsl['e_password'];
-         $_SESSION['email'] = $rsl['email'];
-         header('location: ./home.php');
-     }
-
-  }
-  else{
-   
-    header('location: ./alert.php');
-  }
-
-}
-
-
-
-
-?>
- 
 
      
 

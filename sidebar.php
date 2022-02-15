@@ -20,7 +20,7 @@
                     <a href="payments.php" class="list-group-item list-group-item-action  rounded <?php echo $active3; ?> text-center" style=" font-weight: 500; border: none; <?php echo $bac3; ?>" <?php echo $area3; ?>><span class=""><i class="fas fa-dollar-sign"></i></span><span class="d-none d-lg-block">Payment</span></a>
                     <a href="" class="list-group-item list-group-item-action text-center  rounded" style=" font-weight: 500; border: none; background:#FAFFC1;"><span class=""><i class="fas fa-file-invoice"></i></span><span class="d-none d-lg-block">Report</span></a>
                     <a href="#" class="list-group-item  list-group-item-action text-center  rounded" style=" font-weight: 500; border: none; background:#FAFFC1;"><span class=""><i class="fas fa-sliders-h"></i></span><span class="d-none d-lg-block"> Settings</span></a>
-                    <a href="index.php" class="list-group-item  list-group-item-action text-center rounded" style=" font-weight: 500; border: none; background:#FAFFC1;"><span class="d-none d-lg-block" style="color: black; "> Log out</span><i class="fas fa-sign-out-alt"></i></a>
+                    <a href="SignIN.php" class="list-group-item  list-group-item-action text-center rounded" style=" font-weight: 500; border: none; background:#FAFFC1;"><span class="d-none d-lg-block" style="color: black; "> Log out</span><i class="fas fa-sign-out-alt"></i></a>
                   </div>
             </div>
             
