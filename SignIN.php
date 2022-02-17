@@ -1,5 +1,5 @@
 <?php
-
+$alert="";
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
@@ -12,12 +12,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     include('i.php');
 
     $email = $_POST["email"];
-    $password =strtoupper(hash('sha256', $_POST["e_password"]))  ;
+    $password = md5($_POST["e_password"]);
 
-     $query = "SELECT * FROM `comptes` WHERE email ='$email'  AND  e_password ='$password' ";
+     $query = "SELECT * FROM `comptes` WHERE email ='$email'  AND  e_password like '$password' ";
+     
      $user = mysqli_query($conn,$query);
 
-
+    
      if( mysqli_num_rows($user) != 0 ){
          session_start();
          $rsl = mysqli_fetch_assoc($user);
@@ -26,22 +27,40 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
          $_SESSION['e_password'] = $rsl['e_password'];
          $_SESSION['email'] = $rsl['email'];
          $_SESSION['userName'] = $rsl['userName'];
-
-
+         
          header('location:  home.php');
-     }
+
+         
+        
+
+     }else{
+     
+      $alert='<div class="alert alert-danger d-flex align-items-center" role="alert">
+      <i class="fa fa-exclamation-circle"></i>
+      Une menace a était détecté!!!
+    </div>'; 
 
   }
-  else{
-    $erre = '<div class="alert alert-danger" role="alert">
-
-    A simple danger alert—check it out!
-      </div>';
-  }
+  
+   
+      
+     
 
 }
+if(isset($_POST['check']))
+{
+    
+  session_start();
+
+  setcookie("email",$_SESSION['email'], time()+ 10a);
 
 
+  
+  setcookie("e_password",$_SESSION['e_password'], time()+ 10);
+ 
+
+}
+}
 
 
 ?>
@@ -72,6 +91,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <form class="card-body" method="POST">
                     <h5 class="card-title text-center">SIGN IN</h5>
                     <p class="card-text text-center">Enter your credentials to access your account</p>
+                       
                     <div class="mb-3 mt-3 ">
                       <label for="eml" style="color: gray;" >Email</label>
                       <input type="email" class="form-control form-control-lg" id="eml" placeholder="Enter your email" name="email" style="opacity: 0.5;">
@@ -80,9 +100,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                       <label for="pwd" style="color: gray;">Password</label>
                       <input type="password" class="form-control form-control-lg" id="pwd" placeholder="Enter your password" name="e_password" style="opacity: 0.5;">
                     </div>
+                   
                   <input  type="submit" value="SIGN IN"  class="btn btn-secondary btn-lg container" style="background-color: #00C1FE; border: none;"> 
+                  <div>
+                    <label for="check">remember me</label>
+                  <input type="checkbox" name="check">
+                </div>
+                  
+                  
             </form>
-
+            
+              <div> <?php echo $alert; ?></div>
 
             <div class=" text-center " style="border: none;">
                 <div  class=" text-center " style="margin-top: 10px;">
@@ -90,6 +118,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 </div>
             </div>
           </div>
+          
+
+        
      </div>
 
      

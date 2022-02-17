@@ -48,12 +48,12 @@
     if(isset($_POST['save']))
     {
             $userName = $_POST['UserName'];
-            $password =strtoupper(hash('sha256', $_POST['e_password']))  ;
+            $password = md5($_POST['e_password']);
             $email= $_POST['email'];
      
      
 
-            $sql= " INSERT INTO comptes VALUES( '$email',' $password',NULL,'$userName')";
+            $sql= " INSERT INTO comptes VALUES( '$email','$password',NULL,'$userName')";
             if(mysqli_query($conn, $sql))
             {
                 echo "<script>window.location.href = './SignIN.php';</script>";

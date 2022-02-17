@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +17,8 @@
     <div class="row"  style="height:1050px;">
         <!--sidebar-->
         <?php include('i.php'); 
+
+
          $sql="SELECT course FROM courses";
          $result=mysqli_query($conn,$sql) ;
          $cours = mysqli_num_rows($result); 
@@ -29,7 +32,11 @@
          $result=mysqli_query($conn, $sql) ;
          $stu = mysqli_num_rows($result); 
 
+         $sql="SELECT userName FROM comptes";
+         $result=mysqli_query($conn,$sql) ;
+         $user = mysqli_num_rows($result); 
       
+        
        
         ?>
        <?php 
@@ -42,7 +49,9 @@
          $bac1="background:#00C1FE;";
          $bac2="background:#FAFFC1;";
          $bac3="background:#FAFFC1;";
+          
        include('sidebar.php');  
+       
          ?>
        
             <!--body-->
@@ -54,27 +63,29 @@
                 <div class="row  mx-3 gx-5 gy-3" style="height: 250px;">
                     <!--col1-->
                     <div class="col-sm-12 col-xl-3 col-lg-6 col-md-6  op " >
-                        <div class="p-5" style="  border-radius: 10px; background: #F0F9FF; "><div><i  style=" color: #74C1ED; "  class="fas fa-3x fa-graduation-cap "></i></div><p> students</p> <div class="text-end nb"><?php echo $stu?></div> </div>
+                        <div class="p-5" style="  border-radius: 10px; background: #F0F9FF; "><div><i  style=" color: #74C1ED; "  class="fas fa-3x fa-graduation-cap "></i></div><p> students</p> <div class="text-end nb"><?php echo $stu;?></div> </div>
                     </div>
 
                     <!--col2-->
                     <div class="col-sm-12 col-xl-3 col-lg-6 col-md-6  op " >
-                        <div class="p-5" style="border-radius: 10px; background: #FEF6FB; " ><div><i style="color: #EE95C5;" class="far fa-3x fa-bookmark"></i></div> <p>course</p><div class="text-end nb"><?php echo $cours?></div> </div>
+                        <div class="p-5" style="border-radius: 10px; background: #FEF6FB; " ><div><i style="color: #EE95C5;" class="far fa-3x fa-bookmark"></i></div> <p>course</p><div class="text-end nb"><?php echo $cours;?></div> </div>
                     </div>
                     <!--col3-->
 
                     <div class="col-sm-12 col-xl-3 col-lg-6 col-md-6  op " >
-                        <div class="p-5"  style="border-radius: 10px; background: #FEFBEC; "><div><i style="color: #00C1FE;" class="fas fa-3x fa-dollar-sign"></i></div> <p>payments</p>  <div class="text-end nb"><sub style="font-size:large;">DHs</sub> <?php echo $somme?></div> </div>
+                        <div class="p-5"  style="border-radius: 10px; background: #FEFBEC; "><div><i style="color: #00C1FE;" class="fas fa-3x fa-dollar-sign"></i></div> <p>payments</p>  <div class="text-end nb"><sub style="font-size:large;">DHs</sub> <?php echo $somme;?></div> </div>
                     </div>
                     <!--col4-->
 
                     <div class="col-sm-12 col-xl-3 col-lg-6 col-md-6  op " >
-                        <div class="p-5"  style="color:white; border-radius: 10px; background: linear-gradient(110.42deg, #00C1FE 18.27%, #FAFFC1 91.84%); "><div><i style="color: #FFFF; " class="far fa-3x fa-user"></i></div> <div style="color: white;">Users</div> <div class="text-end nb text-dark"><?php echo '1'?> </div > </div>
+                        <div class="p-5"  style="color:white; border-radius: 10px; background: linear-gradient(110.42deg, #00C1FE 18.27%, #FAFFC1 91.84%); "><div><i style="color: #FFFF; " class="far fa-3x fa-user"></i></div> <div style="color: white;">Users</div> <div class="text-end nb text-dark"><?php echo $user;?> </div > </div>
                     </div>
 
                   
                        
-                   
+                    <?php         
+                              include('cookies.php')
+                            ?>
                 
 
               </div>
@@ -87,7 +98,8 @@
 
 
 
- <?php include('script.php') ?>
+ <?php include('script.php');
+ ?>
 </body>
 
    

@@ -114,7 +114,9 @@
                                 </tr>';
                                  }
                                 ?>
-                             
+                               <?php         
+                              include('cookies.php')
+                            ?>
                                 </tbody>
                             </table>
                     </div>

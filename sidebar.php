@@ -1,3 +1,17 @@
+<?php include('i.php');
+ 
+ 
+ 
+ 
+
+ 
+      session_start();
+     
+      
+
+?>
+
+
 <div class="sidebar col-2 mx-auto min-vh-100">
             <div class="my-5 d-none d-xxl-block ">
                 <h1 class="border-start ms-3 border-4 border-info">E-classe</h1>
@@ -5,7 +19,7 @@
                 <div class="card mx-auto d-block mt-5" style="width: 70%; border: none;">
                     <img src="5dacd6c5391495cfe8fc3abf313e15ce.jpg" class="rounded-circle mx-auto d-block "  alt="Cinque Terre">
                     <div class="card-body">
-                        <h4 class="card-text text-center text-dark" >Admin name</h4>
+                        <h4 class="card-text text-center text-dark" ><?php echo  $_SESSION['userName']; ?></h4>
                         <h5 class="card-text text-center " style="color: #00C1FE; ">Admin</h5>  
                     </div>
                 </div>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -129,7 +130,9 @@
                                 </tr>';
                                  }
                                 ?>
-                             
+                               <?php         
+                              include('cookies.php')
+                            ?>
                                 </tbody>
                             </table>
                     </div>
