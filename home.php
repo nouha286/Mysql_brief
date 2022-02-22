@@ -1,4 +1,12 @@
+     
 
+<?php
+
+session_start();
+include('test.php');
+include('cookies.php');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,10 +22,15 @@
     <title>E-classe</title>
 </head>
 <body >
+    
     <div class="row"  style="height:1050px;">
         <!--sidebar-->
-        <?php include('i.php'); 
-
+        <?php 
+         
+        include('i.php'); 
+        
+         
+      
 
          $sql="SELECT course FROM courses";
          $result=mysqli_query($conn,$sql) ;
@@ -35,8 +48,8 @@
          $sql="SELECT userName FROM comptes";
          $result=mysqli_query($conn,$sql) ;
          $user = mysqli_num_rows($result); 
-      
-        
+         
+         
        
         ?>
        <?php 
@@ -49,8 +62,10 @@
          $bac1="background:#00C1FE;";
          $bac2="background:#FAFFC1;";
          $bac3="background:#FAFFC1;";
-          
-       include('sidebar.php');  
+         
+       include('sidebar.php'); 
+       
+      
        
          ?>
        
@@ -58,7 +73,7 @@
 
             <div class="col-10" >
 
-            <?php include('navbar.php');    ?>
+            <?php include('navbar.php');?>
 
                 <div class="row  mx-3 gx-5 gy-3" style="height: 250px;">
                     <!--col1-->
@@ -83,9 +98,7 @@
 
                   
                        
-                    <?php         
-                              include('cookies.php')
-                            ?>
+                    
                 
 
               </div>
@@ -99,8 +112,10 @@
 
 
  <?php include('script.php');
+
  ?>
 </body>
 
    
 </html>
+

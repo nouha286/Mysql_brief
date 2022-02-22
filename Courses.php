@@ -1,3 +1,6 @@
+<?php         
+    include('cookies.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
