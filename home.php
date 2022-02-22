@@ -3,8 +3,10 @@
 <?php
 
 session_start();
+
 include('test.php');
-include('cookies.php');
+
+
 
 ?>
 <!DOCTYPE html>
@@ -91,7 +93,7 @@ include('cookies.php');
                         <div class="p-5"  style="border-radius: 10px; background: #FEFBEC; "><div><i style="color: #00C1FE;" class="fas fa-3x fa-dollar-sign"></i></div> <p>payments</p>  <div class="text-end nb"><sub style="font-size:large;">DHs</sub> <?php echo $somme;?></div> </div>
                     </div>
                     <!--col4-->
-
+                    
                     <div class="col-sm-12 col-xl-3 col-lg-6 col-md-6  op " >
                         <div class="p-5"  style="color:white; border-radius: 10px; background: linear-gradient(110.42deg, #00C1FE 18.27%, #FAFFC1 91.84%); "><div><i style="color: #FFFF; " class="far fa-3x fa-user"></i></div> <div style="color: white;">Users</div> <div class="text-end nb text-dark"><?php echo $user;?> </div > </div>
                     </div>
@@ -100,18 +102,21 @@ include('cookies.php');
                        
                     
                 
-
+          
               </div>
 
             
         </div>
          
-
+                            
   </div>
 
 
 
- <?php include('script.php');
+ <?php 
+
+ include('script.php');
+ 
 
  ?>
 </body>

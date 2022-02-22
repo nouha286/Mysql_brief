@@ -1,5 +1,6 @@
-<?php         
-    include('cookies.php');
+<?php  
+session_start();       
+    include('test.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -117,9 +118,7 @@
                                 </tr>';
                                  }
                                 ?>
-                               <?php         
-                              include('cookies.php')
-                            ?>
+                              
                                 </tbody>
                             </table>
                     </div>

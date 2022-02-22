@@ -4,6 +4,7 @@
 <?php
 $alert="";
 
+
   if(isset($_POST['save']) && isset($_POST["email"]) && isset($_POST["e_password"])){
 
     include('i.php');
@@ -19,25 +20,35 @@ $alert="";
          $_SESSION['e_password']=$rs['e_password'];
          $_SESSION['email'] = $rs['email'];
          $_SESSION['userName'] =$rs['userName'];
+         session_start();
+      setcookie("emailN",$_SESSION['email'], time()+360000000);
+       setcookie("e_passwordN",$_SESSION['e_password'], time()+360000000 );
          header('location:home.php');
+        
      }
      else{
       $alert='<div class="alert alert-danger d-flex align-items-center" role="alert">
                 <i class="fa fa-exclamation-circle"></i>
                 Une menace a était détecté!!!
               </div>'; 
-    };
+    }
+   
     if(isset($_POST['check'])){
       session_start();
-      setcookie("email",$_SESSION['email'], time()+10);
-       setcookie("e_password",$_SESSION['e_password'], time()+ 10);
+      setcookie("email",$_SESSION['email'], time()+3600*24);
+       setcookie("e_password",$_SESSION['e_password'], time()+ 3600*24);
      }
+}
 
-};
 ?>
 
 <?php
-  
+session_start();
+    if(isset($_SESSION['email'])){
+      echo "<script>window.location.href = './home.php';</script>";
+      
+    
+      }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -98,6 +109,7 @@ $alert="";
      </div>
 
      <?php 
+    
      
      include('script.php');
         ?>

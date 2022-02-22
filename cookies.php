@@ -2,7 +2,7 @@
        
     if(!isset($_COOKIE['e_password']) && !isset($_COOKIE['email']))
         {
-            header('location:SignIN.php');
+            echo "<script>window.location.href = './SignIN.php';</script>";
         }
         
 ?>

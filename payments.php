@@ -135,7 +135,7 @@ include('test.php')
                                  }
                                 ?>
                                <?php         
-                              include('cookies.php')
+                          
                             ?>
                                 </tbody>
                             </table>

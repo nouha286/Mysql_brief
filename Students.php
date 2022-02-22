@@ -1,7 +1,8 @@
 <?php
 
 session_start();
-include('test.php')
+include('test.php');
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -142,7 +143,7 @@ include('test.php')
                                  
                                 ?>
                                 <?php         
-                              include('cookies.php')
+                             
                             ?>
                                 </tbody>
                             </table>

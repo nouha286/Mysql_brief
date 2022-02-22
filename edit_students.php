@@ -1,6 +1,7 @@
 
 <?php 
         include('i.php');
+        session_start();
    $students_id= $_GET['id'];
    $sql = "SELECT * FROM students WHERE id='$students_id' ";
 
