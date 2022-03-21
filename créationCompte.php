@@ -19,22 +19,26 @@
               <p class="border-start ms-5 border-4 border-info my-3" style="font-style: normal; font-weight: bold; font-size: 32px; line-height: 39px;"> E-classe</p>
             </div>
 
-            <form class="card-body" method="POST">
+            <form class="card-body" method="POST" onsubmit="return valeur()">
                     <h5 class="card-title text-center">SIGN IN</h5>
                     <p class="card-text text-center">Enter your credentials to create a new account</p>
                     <div class="mb-3 mt-3 ">
-                      <label for="eml" style="color: gray;" >Email</label>
-                      <input type="email" class="form-control form-control-lg" id="eml" placeholder="Enter your email" name="email" style="opacity: 0.5;">
+                      <label for="eml" style="color: gray;"  >Email:</label>
+                      <input type="text"  class="form-control form-control-lg" id="email" placeholder="Enter your email" name="email" style="opacity: 0.5;">
                     </div>
+                    
                     <div class="mb-3 mt-3 ">
                       <label for="eml" style="color: gray;" >UserName:</label>
-                      <input type="text" class="form-control form-control-lg" name="UserName" id="eml" placeholder="Enter your name" name="email" style="opacity: 0.5;">
+                      <input type="text" class="form-control form-control-lg" name="UserName" id="name" placeholder="Enter your name" name="email" style="opacity: 0.5;">
                     </div>
+                    
                     <div class="mb-3 ">
                       <label for="pwd" style="color: gray;">Password:</label>
                       <input type="password" class="form-control form-control-lg" name="e_password" id="pwd" placeholder="Enter your password" name="e_password" style="opacity: 0.5;">
                     </div>
-                  <input  type="submit" value="SIGN up" name="save" class="btn btn-secondary btn-lg container" style="background-color: #00C1FE; border: none;"> 
+                    <span id="pass" class="alert-danger" role="alert"></span>
+                   
+                  <input  type="submit"  value="SIGN up" name="save" class="btn btn-secondary btn-lg container" style="background-color: #00C1FE; border: none;"> 
             </form>
 
 
@@ -73,5 +77,6 @@
 
 
    <?php include('script.php') ?>
+  <script src="compte.js" ></script>
 </body>
 </html>

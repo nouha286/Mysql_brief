@@ -25,12 +25,17 @@ include('test.php');
             $active1="";
            $active2="active";
            $active3="";
+           $active4="";
+           
            $area1="";
            $area2='aria-current="true"';
            $area3="";
+           $area4="";
+
             $bac1=" background:#FAFFC1";
             $bac2="background:#00C1FE;";
             $bac3="background:#FAFFC1";
+            $bac4="background:#FAFFC1";
            include('sidebar.php')  ?>
     
             <!--body-->
@@ -65,28 +70,35 @@ include('test.php');
       </div>
 
       <div class="modal-body">
-                    <form method="POST" action="./addstudents.php">
+                    <form method="POST"  action="./addstudents.php" onsubmit="return std()">
 
                             <div class="mb-3">
                             <label for="N" class="form-label">Name:</label>
                             <input type="text" class="form-control" name="Name" id="N">
                         </div>
+                        <span id="nom" class="alert-danger" role="alert"></span>
+
 
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Email:</label>
-                            <input type="email" class="form-control" name="Email" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <input type="text" class="form-control" name="Email" id="exampleInputEmail1" aria-describedby="emailHelp">
                             
                         </div>
+
+                         <span id="mail" class="alert-danger" role="alert"></span>
 
                         <div class="mb-3">
                             <label for="P" class="form-label">Phone:</label>
                             <input type="text" name="Phone" class="form-control" id="P">
                         </div>
+
+                        <span id="telephone" class="alert-danger" role="alert"></span>
                         
                         <div class="mb-3">
                             <label for="E" class="form-label">Entroll_Number:</label>
                             <input type="text" name="Enroll_Number" class="form-control" id="E">
                         </div>
+                        <span id="E_telephone" class="alert-danger" role="alert"></span>
 
                         <div class="mb-3">
                             <label for="D" class="form-label">Date d'admission:</label>
@@ -135,7 +147,7 @@ include('test.php');
                                     <td>'.$students['Phone'].'</td>
                                     <td>'.$students['Enroll_Number'].'</td>
                                     <td>'.$students['Sdate'].'</td>
-                                    <td><a  href="./edit_students.php?id='.$students['id'].'"><i class="fas fa-pen text-info"></i></a><span style="color:white;">---</span><a href="remove_students.php?id='.$students['id'].'"><i class="fas fa-trash text-info"></i></a></td>
+                                    <td><a  href="./edit_students.php?id='.$students['id'].'"><i class="fas fa-pen text-info"></i></a><span style="color:white;">---</span><a onclick="return del()" href="remove_students.php?id='.$students['id'].'"><i class="fas fa-trash text-info"></i></a></td>
                                 </tr>';
                                 
                                  }; 
@@ -163,5 +175,6 @@ include('test.php');
 
    
     <?php include('script.php') ?>
+    <script src="Students.js" ></script>
 </body>
 </html>

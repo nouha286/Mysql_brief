@@ -24,15 +24,18 @@ include('test.php')
             $active1="";
             $active2="";
             $active3="active";
+            $active4="";
 
             $area1="";
             $area2="";
             $area3="aria-current=\"true\"";
+            $area4="";
 
             
             $bac1="background:#FAFFC1;";
             $bac2="background:#FAFFC1;";
             $bac3="background:#00C1FE;";
+            $bac4="background:#FAFFC1;";
           include('sidebar.php') 
           ?>
             <!--body-->
@@ -60,7 +63,7 @@ include('test.php')
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-                    <form method="POST" action="./addpayments.php">
+                    <form method="POST" onsubmit="return pay()" action="./addpayments.php" >
 
                             <div class="mb-3">
                             <label for="N" class="form-label">Name:</label>
@@ -69,23 +72,27 @@ include('test.php')
 
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Payment Schedule:</label>
-                            <input type="email" class="form-control" name="Payment_Schedule" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <input type="text" class="form-control" name="Payment_Schedule" id="exampleInputEmail1" aria-describedby="emailHelp">
                             
                         </div>
+                        <span id="mail" class="alert-danger" role="alert"></span>
 
                         <div class="mb-3">
                             <label for="P" class="form-label">Bill Number:</label>
                             <input type="text" name="Bill_Number" class="form-control" id="P">
                         </div>
                         
+                        <span id="telephone" class="alert-danger" role="alert"></span>
+
                         <div class="mb-3">
                             <label for="E" class="form-label">Amount Paid:</label>
                             <input type="text" name="Amount_Paid" class="form-control" id="E">
                         </div>
+                        <span id="A_telephone" class="alert-danger" role="alert"></span>
 
                         <div class="mb-3">
                             <label for="D" class="form-label">Balance amount:</label>
-                            <input type="text" name="Balance_amount" class="form-control" id="D">
+                            <input type="text" name="Balance_amount" class="form-control" id="B">
                         </div>
 
                         <div class="mb-3">
@@ -154,5 +161,6 @@ include('test.php')
 
 
     <?php include('script.php') ?>
+    <script src="payments.js" ></script>
 </body>
 </html>

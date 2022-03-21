@@ -58,12 +58,17 @@ include('test.php');
         $area1='aria-current="true"';
         $area2="";
         $area3="";
+        $area4="";
+
          $active1="active";
          $active2="";
          $active3="";
+         $active4="";
+
          $bac1="background:#00C1FE;";
          $bac2="background:#FAFFC1;";
          $bac3="background:#FAFFC1;";
+         $bac4="background:#FAFFC1;";
          
        include('sidebar.php'); 
        
@@ -119,6 +124,7 @@ include('test.php');
  
 
  ?>
+ <script src="Students.js"></script>
 </body>
 
    

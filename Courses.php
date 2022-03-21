@@ -22,16 +22,19 @@ session_start();
           <?php 
             $active1="";
             $active2="";
-            $active3="active";
+            $active3="";
+            $active4="active";
 
             $area1="";
             $area2="";
-            $area3="aria-current=\"true\"";
+            $area3="";
+            $area4="aria-current=\"true\"";
 
             
             $bac1="background:#FAFFC1;";
             $bac2="background:#FAFFC1;";
-            $bac3="background:#00C1FE;";
+            $bac3="background:#FAFFC1;";
+            $bac4="background:#00C1FE;";
           include('sidebar.php') 
           ?>
             <!--body-->
@@ -59,12 +62,13 @@ session_start();
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-                    <form method="POST" action="./addcourses.php">
+                    <form method="POST" onsubmit="return valeur()" action="./addcourses.php">
 
                             <div class="mb-3">
                             <label for="N" class="form-label">Course:</label>
-                            <input type="text" class="form-control" name="course" id="N" >
+                            <input type="text"  class="form-control" name="course" id="N" >
                         </div>
+                        <span id="cours" class="alert-danger" role="alert"></span>
 
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Subject:</label>
@@ -114,9 +118,10 @@ session_start();
                                     <td>'.$courses['c_Subject'].'</td>
                                     <td>'.$courses['Author'].'</td>
                                     <td>'.$courses['Duration_of_course'].'</td>
-                                    <td><a href="./edit_courses.php?id='.$courses['id'].'"><i class="fas fa-pen text-info"></i></a><span style="color:white;">---</span><a href="remove_courses.php?id='.$courses['id'].'"><i class="fas fa-trash text-info"></i></a></td>
+                                    <td><a href="./edit_courses.php?id='.$courses['id'].'"><i class="fas fa-pen text-info"></i></a><span style="color:white;">---</span><a onclick="return suppr()"  href="remove_courses.php?id='.$courses['id'].'"><i class="fas fa-trash text-info"></i></a></td>
                                 </tr>';
                                  }
+                                
                                 ?>
                               
                                 </tbody>
@@ -136,5 +141,7 @@ session_start();
 
 
     <?php include('script.php') ?>
+
+       <script src="courses.js" ></script>
 </body>
 </html>

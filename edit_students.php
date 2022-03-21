@@ -31,6 +31,7 @@
    
     
     mysqli_close($conn);
+    include('test.php');
 
 ?>
 
@@ -52,15 +53,20 @@
  
             <!--sidebar-->
            <?php  
-            $active1="";
-           $active2="active";
-           $active3="";
-           $area1="";
-           $area2='aria-current="true"';
-           $area3="";
-            $bac1=" background:#FAFFC1";
-            $bac2="background:#00C1FE;";
-            $bac3="background:#FAFFC1";
+             $active1="";
+             $active2="active";
+             $active3="";
+             $active4="";
+             
+             $area1="";
+             $area2='aria-current="true"';
+             $area3="";
+             $area4="";
+  
+              $bac1=" background:#FAFFC1";
+              $bac2="background:#00C1FE;";
+              $bac3="background:#FAFFC1";
+              $bac4="background:#FAFFC1";
            include('sidebar.php')  ?>
     
             <!--body-->
@@ -69,12 +75,14 @@
             <?php  include('navbar.php')  ?>
               
                
-                     <form method="POST" >
+                     <form method="POST" onsubmit="return std()" >
 
                                 <div class="mb-3">
                                 <label for="N" class="form-label">Name:</label>
                                 <input type="text" class="form-control" name="Name" id="N" value="<?php echo $students['SName']; ?>">
                                 </div>
+
+                                <span id="nom" class="alert-danger" role="alert"></span>
 
                                 <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Email:</label>
@@ -82,15 +90,21 @@
 
                                 </div>
 
+                                <span id="mail" class="alert-danger" role="alert"></span>
+
                                 <div class="mb-3">
                                 <label for="P" class="form-label">Phone:</label>
                                 <input type="text" name="Phone" class="form-control" id="P" value="<?php echo $students['Phone']; ?>">
                                 </div>
 
+                                <span id="telephone" class="alert-danger" role="alert"></span>
+
                                 <div class="mb-3">
                                 <label for="E" class="form-label">Entroll_Number:</label>
                                 <input type="text" name="Enroll_Number" class="form-control" id="E" value="<?php echo $students['Enroll_Number']; ?>">
                                 </div>
+
+                                <span id="E_telephone" class="alert-danger" role="alert"></span>
 
                                 <div class="mb-3">
                                 <label for="D" class="form-label">Date d'admission:</label>
@@ -110,5 +124,6 @@
 
    
     <?php include('script.php') ?>
+    <script src="Students.js" ></script>
 </body>
 </html>

@@ -31,6 +31,7 @@ session_start();
    
     
     mysqli_close($conn);
+    include('test.php');
 
 ?>
 
@@ -48,19 +49,26 @@ session_start();
     <title>Student-option</title>
 </head>
 <body>
+
     <div class="row"  style="height:1050px;">
  
             <!--sidebar-->
            <?php  
             $active1="";
-           $active2="active";
-           $active3="";
-           $area1="";
-           $area2='aria-current="true"';
-           $area3="";
-            $bac1=" background:#FAFFC1";
-            $bac2="background:#00C1FE;";
-            $bac3="background:#FAFFC1";
+            $active2="";
+            $active3="";
+            $active4="active";
+
+            $area1="";
+            $area2="";
+            $area3="";
+            $area4="aria-current=\"true\"";
+
+            
+            $bac1="background:#FAFFC1;";
+            $bac2="background:#FAFFC1;";
+            $bac3="background:#FAFFC1;";
+            $bac4="background:#00C1FE;";
            include('sidebar.php')  ?>
     
             <!--body-->
@@ -69,12 +77,14 @@ session_start();
             <?php  include('navbar.php')  ?>
               
                
-             <form method="POST">
+             <form method="POST" onsubmit="return valeur()">
 
                             <div class="mb-3">
                             <label for="N" class="form-label">Course:</label>
                             <input type="text" class="form-control" name="course" id="N" value="<?php echo $courses['Course']; ?>">
                             </div>
+
+                            <span id="cours" class="alert-danger" role="alert"></span>
 
                             <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Subject:</label>
@@ -105,5 +115,7 @@ session_start();
 
    
     <?php include('script.php') ?>
+   <script src="courses.js" ></script>
+   
 </body>
 </html>

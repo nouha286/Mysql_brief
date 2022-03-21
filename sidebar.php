@@ -1,5 +1,4 @@
-<?php 
-?>
+
 
 
 <div class="sidebar col-2 mx-auto min-vh-100">
@@ -19,15 +18,16 @@
                     <a href="home.php" class="list-group-item list-group-item-action <?php echo $active1; ?> text-center rounded" style="border: none;<?php echo $bac1; ?>" <?php echo $area1; ?>>
                         <span><i class="fas fa-home"></i></span><span class="d-none d-lg-block">Home</span> 
                     </a>
-                    <a href="Courses.php" class="list-group-item list-group-item-action text-center rounded" style=" font-weight: 500; border: none; background:#FAFFC1;" ><span class=""><i class="far fa-bookmark"></i></span><span class="d-none d-lg-block">Course</span></a>
+                    <a href="Courses.php" class="list-group-item list-group-item-action text-center rounded <?php echo $active4; ?>" style=" font-weight: 500; border: none; background:#FAFFC1; <?php echo $bac4; ?>" <?php echo $area4; ?> ><span class=""><i class="far fa-bookmark"></i></span><span class="d-none d-lg-block">Course</span></a>
                     <a href="Students.php" class="list-group-item list-group-item-action   rounded <?php echo $active2; ?>  text-center" style=" font-weight: 500; border: none;<?php echo $bac2; ?>" <?php echo $area2; ?>><span class=""><i class="fas fa-graduation-cap"></i></span><span class="d-none d-lg-block" >Students</span></a>
                     <a href="payments.php" class="list-group-item list-group-item-action  rounded <?php echo $active3; ?> text-center" style=" font-weight: 500; border: none; <?php echo $bac3; ?>" <?php echo $area3; ?>><span class=""><i class="fas fa-dollar-sign"></i></span><span class="d-none d-lg-block">Payment</span></a>
                     <a href="" class="list-group-item list-group-item-action text-center  rounded" style=" font-weight: 500; border: none; background:#FAFFC1;"><span class=""><i class="fas fa-file-invoice"></i></span><span class="d-none d-lg-block">Report</span></a>
                     <a href="#" class="list-group-item  list-group-item-action text-center  rounded" style=" font-weight: 500; border: none; background:#FAFFC1;"><span class=""><i class="fas fa-sliders-h"></i></span><span class="d-none d-lg-block"> Settings</span></a>
-                    <a href="logout.php" class="list-group-item  list-group-item-action text-center rounded" style=" font-weight: 500; border: none; background:#FAFFC1;"><span class="d-none d-lg-block" style="color: black; "> Log out</span><i class="fas fa-sign-out-alt"></i></a>
+                    <a href="logout.php" onclick="return dec()" class="list-group-item  list-group-item-action text-center rounded" style=" font-weight: 500; border: none; background:#FAFFC1;"><span class="d-none d-lg-block" style="color: black; "> Log out</span><i class="fas fa-sign-out-alt"></i></a>
                   </div>
             </div>
             
         
             
 </div>
+
